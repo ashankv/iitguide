@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:font="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+
+
+    android:background="@drawable/blue_green"
+    android:alpha="0.8">
+
+
+    <com.iitguide.iitguide.TypefacedTextView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:padding="16dp"
+        android:gravity="right"
+        android:layout_marginBottom="10dp"
+        android:textSize="32sp"
+        style="@style/TextAppearance.AppCompat.Title"
+        android:text="IITGuide"
+        android:textColor="#80CBC4"
+        font:typeface="RobotoCondensed-Regular.ttf"
+        xmlns:font="http://schemas.android.com/apk/res/com.iitguide.iitguide"
+
+        />
+
+    <com.iitguide.iitguide.TypefacedTextView
+        xmlns:font="http://schemas.android.com/apk/res/com.iitguide.iitguide"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Your Account"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="22dp"
+        android:layout_marginRight="15dp"
+        android:gravity="right"
+        android:textSize="20sp"
+        style="@style/TextAppearance.AppCompat.Title"
+        android:textColor="#80CBC4"
+        font:typeface="RobotoCondensed-Regular.ttf"/>
+
+</FrameLayout>

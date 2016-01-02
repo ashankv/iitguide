@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group
+        android:checkableBehavior="single"
+        android:id="@+id/group_1">
+        <item
+            android:id="@+id/student_portal"
+            android:title="Student Portal"
+
+            android:icon="@drawable/student_portal">
+
+        </item>
+
+    </group>
+
+
+    <group
+        android:checkableBehavior="single"
+        android:id="@+id/group_2">
+        <item
+            android:id="@+id/faculty_directory"
+            android:title="Faculty Directory"
+            android:icon="@drawable/faculty">
+
+        </item>
+
+        <item
+            android:id="@+id/question_answer"
+            android:title="FAQ"
+            android:icon="@drawable/faq">
+
+        </item>
+
+        <item
+            android:id="@+id/contact"
+            android:title="Contact"
+            android:icon="@drawable/contact">
+
+        </item>
+    </group>
+
+    <group
+        android:checkableBehavior="single"
+        android:id="@+id/group_logout">
+
+
+            <item
+                android:id="@+id/logout"
+                android:title="Logout"
+                android:icon="@drawable/student_portal">
+
+            </item>
+
+    </group>
+</menu>
