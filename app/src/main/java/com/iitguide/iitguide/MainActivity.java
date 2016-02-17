@@ -1,10 +1,14 @@
 package com.iitguide.iitguide;
 
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.text.InputType;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -16,6 +20,8 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import org.apache.http.auth.Credentials;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -52,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
         userLayout = (RelativeLayout) findViewById(R.id.userLayout);
         mainToolBar = (Toolbar) findViewById(R.id.app_bar);
         userNameView = (EditText) findViewById(R.id.userNameView);
+        userNameView.setInputType(InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS);
         passwordView = (EditText) findViewById(R.id.passwordView);
 
 
@@ -85,6 +92,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+            boolean didSucceed = false;
+
             try {
                 String myUsername = userNameView.getText().toString();
                 String myPassword = passwordView.getText().toString();
@@ -96,6 +105,21 @@ public class MainActivity extends AppCompatActivity {
                 System.out.println(myAuthUrl);
 
                 try {
+
+                    boolean connected = false;
+                    ConnectivityManager connectivityManager = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
+                    if(connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.CONNECTED ||
+                            connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() == NetworkInfo.State.CONNECTED) {
+                        //we are connected to a network
+                        connected = true;
+                    }
+                    else
+                        connected = false;
+
+                    if(!connected){
+
+                        throw new Exception(VimeoHelper.CONNECTION_MISSING);
+                    }
 
                     if(myUsername.equals("")|| myPassword.equals("")){
 
@@ -125,6 +149,8 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), (String) e.getMessage(), Toast.LENGTH_LONG).show();
                     throw new LoginFailException();
                 }
+
+                didSucceed = true;
 
                 Intent intent = new Intent(MainActivity.this, CourseActivity.class);
                 startActivity(intent);

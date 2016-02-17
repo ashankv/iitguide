@@ -8,143 +8,19 @@
 
     <include layout="@layout/app_bar"/>
 
-
-
-
-
-        <LinearLayout
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <com.iitguide.iitguide.TypefacedTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Q. Why should I use iitguide.com services?
-
-A. We ask you a question to answer this question:
-
-Do you think an additional session on weekdays evenings with reputed professors can add to your knowledge and increase the chance of success? Do you think online test series can increase your chances in JEE? Do you think accessing classes, video recordings and assignment anywhere, including your smart phone will enable you to get the best material anywhere? If your answers are yes, then you should use iitguide.com services."
-                android:layout_marginTop="10dp"
-                android:textSize="15sp"
-                android:textColor="#000000"
-                android:layout_marginLeft="12dp"
-
-                xmlns:font="http://schemas.android.com/apk/res/org.destvac.destinationvacctionation">
-
-            </com.iitguide.iitguide.TypefacedTextView>
-
-            <com.iitguide.iitguide.TypefacedTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Q. Can I register to classes on this website even if I am taking coaching at other places?
-
-A. Sure you can, our classes will add more knowledge."
-            android:layout_marginTop="15dp"
-            android:textSize="15sp"
+            android:orientation="vertical"
+            android:layout_marginTop="75dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:maxLines="350"
+            android:scrollbars="vertical"
             android:textColor="#000000"
-            android:layout_marginLeft="12dp"
+            android:text="Q. Why should I use iitguide.com services? \n \nA. We ask you a question to answer this question: \n \nDo you think an additional session on weekdays evenings from the reputed professors can add to your knowledge and increase the chance of success? Do you think online test series can increase your chances in JEE? Do you think accessing classes, video recordings and assignment anywhere, including your smart phone will enable you to get the best material anywhere? If your answers is yes, then you should use iitguide.com services.  \n \nQ. Can I register to classes on this website even if I am taking coaching at other places?  \n \nA. Sure you can, our classes will add more knowledge. \n \nQ. How techniques are different than conventional coaching?\n\nA. With 30+ years of teaching experience for IIT preparation, our faculty members believe that by learning techniques for tests you can perform better. Conventional coaching teaches the subject while we teach the tricks to solve the provlem and crack the exam.">
 
-
-            xmlns:font="http://schemas.android.com/apk/res/org.destvac.destinationvacctionation">
-
-            </com.iitguide.iitguide.TypefacedTextView>
-
-            <com.iitguide.iitguide.TypefacedTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Q. How techniques are different than conventional coaching?
-
-A. With 30+ years of teaching experience for IIT preparation, our faculty members believe that by learning techniques for tests you can perform better. Conventional coaching teaches the subject while we teach the tricks to solve the provlem and crack the exam."
-                android:layout_marginTop="20dp"
-                android:textSize="15sp"
-                android:textColor="#000000"
-                android:layout_marginLeft="12dp"
-
-                xmlns:font="http://schemas.android.com/apk/res/org.destvac.destinationvacctionation">
-
-            </com.iitguide.iitguide.TypefacedTextView>
-
-            <com.iitguide.iitguide.TypefacedTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Q. Do I need to have books written by the professors at your website?
-
-A. No, however we recommend that following books will be helpful for you-
-
-Numerical Chemistry by Dr. P. Bahadur
-
-Mechanics - 1 and Mechanics -2 by Prof D. C. Pandey"
-                android:layout_marginTop="25dp"
-                android:textSize="15sp"
-                android:textColor="#000000"
-                android:layout_marginLeft="12dp"
-
-                xmlns:font="http://schemas.android.com/apk/res/org.destvac.destinationvacctionation">
-
-            </com.iitguide.iitguide.TypefacedTextView>
-
-            <com.iitguide.iitguide.TypefacedTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Q. What is the refund policy?
-
-A. If you do not like our course then please inform us in first three days and we will refund your fee completely."
-                android:layout_marginTop="30dp"
-                android:textSize="15sp"
-                android:textColor="#000000"
-                android:layout_marginLeft="12dp"
-
-                xmlns:font="http://schemas.android.com/apk/res/org.destvac.destinationvacctionation">
-
-            </com.iitguide.iitguide.TypefacedTextView>
-
-            <com.iitguide.iitguide.TypefacedTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Q. What is a webinar?
-
-A. Webinar is a a Web-based class. Students can join the webinar by simply clicking a link or button in the email sent to them when webinar is scheduled."
-            android:layout_marginTop="35dp"
-            android:textSize="15sp"
-            android:textColor="#000000"
-            android:layout_marginLeft="12dp"
-
-            xmlns:font="http://schemas.android.com/apk/res/org.destvac.destinationvacctionation">
-
-        </com.iitguide.iitguide.TypefacedTextView>
-
-        <com.iitguide.iitguide.TypefacedTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Q. Where can I access iitguide.com classes ?
-
-A. You can access classes from anyplace with a computer with speakers and internet connection. It could be your home, school or cyber café. Isn't that easy? Thanks to the internet technology."
-            android:layout_marginTop="40dp"
-            android:textSize="15sp"
-            android:textColor="#000000"
-            android:layout_marginLeft="12dp"
-
-            xmlns:font="http://schemas.android.com/apk/res/org.destvac.destinationvacctionation">
-
-        </com.iitguide.iitguide.TypefacedTextView>
-
-            <com.iitguide.iitguide.TypefacedTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Q. What is the availability of video recordings of classes ?
-
-A. You get availability of video recording of classes up to one year, please be rest assured that video classes will be available until you appear last engineering entrace exam of the year for which you have registered."
-                android:layout_marginTop="45dp"
-                android:textSize="15sp"
-                android:textColor="#000000"
-                android:layout_marginLeft="12dp"
-
-                xmlns:font="http://schemas.android.com/apk/res/org.destvac.destinationvacctionation">
-
-            </com.iitguide.iitguide.TypefacedTextView>
-        </LinearLayout>
-
+        </TextView>
 
 
     <android.support.design.widget.NavigationView

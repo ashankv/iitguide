@@ -42,7 +42,7 @@ public class QuestionAnswer extends AppCompatActivity implements NavigationView.
     @Override
     public boolean onNavigationItemSelected(MenuItem menuItem) {
         Intent intent = null;
-        if (menuItem.getItemId() == R.id.student_portal) {
+        if (menuItem.getItemId() == R.id.question_answer) {
             mDrawerLayout.closeDrawer(GravityCompat.START);
             return true;
         }
@@ -60,13 +60,13 @@ public class QuestionAnswer extends AppCompatActivity implements NavigationView.
 
         }
 
-        if (menuItem.getItemId() == R.id.question_answer) {
-            Intent facintent = new Intent(QuestionAnswer.this, QuestionAnswer.class);
+        if (menuItem.getItemId() == R.id.contact) {
+            Intent facintent = new Intent(QuestionAnswer.this, Contact.class);
             startActivity(facintent);
         }
 
-        if (menuItem.getItemId() == R.id.logout) {
-            Intent facintent = new Intent(QuestionAnswer.this, QuestionAnswer.class);
+        if (menuItem.getItemId() == R.id.student_portal) {
+            Intent facintent = new Intent(QuestionAnswer.this, CourseActivity.class);
             startActivity(facintent);
         }
 

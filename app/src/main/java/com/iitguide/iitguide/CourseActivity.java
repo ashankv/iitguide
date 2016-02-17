@@ -129,9 +129,15 @@ public class CourseActivity extends AppCompatActivity implements NavigationView.
         }
 
         if(menuItem.getItemId() == R.id.logout){
-            Intent facintent = new Intent(CourseActivity.this, QuestionAnswer.class);
+            Intent facintent = new Intent(CourseActivity.this, MainActivity.class);
             startActivity(facintent);
         }
+
+        if(menuItem.getItemId() == R.id.contact){
+            Intent facintent = new Intent(CourseActivity.this, Contact.class);
+            startActivity(facintent);
+        }
+
 
 
         return false;

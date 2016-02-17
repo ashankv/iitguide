@@ -94,9 +94,30 @@ public class ChemAdapter extends BaseAdapter {
     }
 
     @Override
+    public boolean hasStableIds(){
+        return true;
+    }
+
+    @Override
     public long getItemId(int position) {
         // TODO Auto-generated method stub
-        return position;
+
+        String tempSubject = ChemGridActivity.mGenericAdapter.getPageTitle(ChemGridActivity.mTabLayout.getSelectedTabPosition()).toString();
+
+        if(tempSubject.equals("chemistry")){
+
+            return Integer.parseInt(VimeoHelper.completeCoursesArray.get(ChemGridActivity.receivedCourseIndex).chemVideos.get(position).videoId);
+        }
+
+        else if(tempSubject.equals("physics")){
+            return Integer.parseInt(VimeoHelper.completeCoursesArray.get(ChemGridActivity.receivedCourseIndex).physicsVideos.get(position).videoId);
+        }
+
+        else if(tempSubject.equals("mathematics")){
+            return Integer.parseInt(VimeoHelper.completeCoursesArray.get(ChemGridActivity.receivedCourseIndex).mathVideos.get(position).videoId);
+        }
+
+        else return 0;
     }
 
     class ViewHolder{

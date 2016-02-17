@@ -45,7 +45,7 @@ public class FacDirect extends AppCompatActivity implements NavigationView.OnNav
         setSupportActionBar(mToolbar);
 
         mDrawer = (NavigationView) findViewById(R.id.main_drawer);
-    //    mDrawer.setNavigationItemSelectedListener(this);
+        mDrawer.setNavigationItemSelectedListener(this);
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, mToolbar, R.string.drawer_open, R.string.drawer_close);
 
@@ -84,6 +84,11 @@ public class FacDirect extends AppCompatActivity implements NavigationView.OnNav
 
         if(menuItem.getItemId() == R.id.question_answer){
             Intent facintent = new Intent(FacDirect.this, QuestionAnswer.class);
+            startActivity(facintent);
+        }
+
+        if(menuItem.getItemId() == R.id.contact){
+            Intent facintent = new Intent(FacDirect.this, Contact.class);
             startActivity(facintent);
         }
 

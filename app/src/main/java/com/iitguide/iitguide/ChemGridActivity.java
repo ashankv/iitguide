@@ -44,6 +44,7 @@ public class ChemGridActivity extends AppCompatActivity implements NavigationVie
     public static String receivedCourseName;
     public static int receivedCourseIndex;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState){
 
@@ -79,20 +80,30 @@ public class ChemGridActivity extends AppCompatActivity implements NavigationVie
         mGenericAdapter = new GenericPagerAdapter(getSupportFragmentManager());
         mPager = (ViewPager) findViewById(R.id.view_pager);
         mPager.setAdapter(mGenericAdapter);
+        mPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
-        //Notice how the Tab Layout links with the Pager Adapter
-        mTabLayout.setTabsFromPagerAdapter(mGenericAdapter);
-
-        //Notice how The Tab Layout and View Pager object are linked
-        mTabLayout.setupWithViewPager(mPager);
-        mPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(mTabLayout){
+            }
 
             @Override
             public void onPageSelected(int position) {
                 mGenericAdapter.notifyDataSetChanged();
             }
 
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
         });
+
+        //Notice how the Tab Layout links with the Pager Adapter
+        mTabLayout.setTabsFromPagerAdapter(mGenericAdapter);
+
+        //Notice how The Tab Layout and View Pager object are linked
+        mTabLayout.setupWithViewPager(mPager);
+        mPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(mTabLayout));
 
 
 
@@ -124,6 +135,24 @@ public class ChemGridActivity extends AppCompatActivity implements NavigationVie
             return true;
         }
 
+        if(menuItem.getItemId() == R.id.faculty_directory){
+            Intent facIntent =  new Intent(ChemGridActivity.this,  FacDirect.class);
+            startActivity(facIntent);
+            return true;
+        }
+
+        if(menuItem.getItemId() == R.id.question_answer){
+            Intent questIntent =  new Intent(ChemGridActivity.this,  QuestionAnswer.class);
+            startActivity(questIntent);
+            return true;
+        }
+
+        if(menuItem.getItemId() == R.id.contact){
+            Intent contactIntent =  new Intent(ChemGridActivity.this,  Contact.class);
+            startActivity(contactIntent);
+            return true;
+        }
+
         if(menuItem.getItemId() == R.id.logout){
             Intent logIntent = new Intent(ChemGridActivity.this, MainActivity.class);
             VimeoHelper.completeCoursesArray.clear();
@@ -147,13 +176,23 @@ public class ChemGridActivity extends AppCompatActivity implements NavigationVie
 
     public static class MyFragment extends Fragment {
 
+        public static final int POSITION_SOMETHING = 11111;
 
         private static final String KEY_DISPLAY_TYPE = "KEY_DISPLAY_TYPE";
 
-        public static final int POSITION_SOMETHINHG = 11111;
+
 
         public MyFragment(){
 
+        }
+
+        @Override
+        public void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            Bundle args = getArguments();
+            if (args != null) {
+                int mDisplay = args.getInt(KEY_DISPLAY_TYPE, 0);
+            }
         }
 
         @Override
@@ -204,11 +243,11 @@ public class ChemGridActivity extends AppCompatActivity implements NavigationVie
         }
 
         public static MyFragment newInstance(int display) {
-            MyFragment myFragment = new MyFragment();
-        //    Bundle bundle = new Bundle();
-        //    bundle.addExtra(KEY_DISPLAY_TYPE, display);
-        //    myFragment.setArguments(bundle);
-            return myFragment;
+            MyFragment f = new MyFragment();
+            Bundle bund = new Bundle();
+            bund.putInt(KEY_DISPLAY_TYPE, display);
+            f.setArguments(bund);
+            return f;
         }
 
 
@@ -217,18 +256,23 @@ public class ChemGridActivity extends AppCompatActivity implements NavigationVie
 
 class GenericPagerAdapter extends FragmentStatePagerAdapter {
 
+    public static final int POSITION_SOMETHING = 11111;
+
     public GenericPagerAdapter(FragmentManager fm) {
         super(fm);
     }
 
     @Override
     public Fragment getItem(int position) {
-        ChemGridActivity.MyFragment myFragment = new ChemGridActivity.MyFragment();
-        return myFragment;
+        //ChemGridActivity.MyFragment myFragment = new ChemGridActivity.MyFragment.POSITION_SOMETHING();
+
+        //return myFragment;
+        return ChemGridActivity.MyFragment.newInstance(ChemGridActivity.MyFragment.POSITION_SOMETHING);
     }
 
     @Override
     public int getCount() {
+
         return 3; //returns number of tabs that need to be created
     }
 

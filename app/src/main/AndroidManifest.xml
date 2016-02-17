@@ -3,6 +3,8 @@
     package="com.iitguide.iitguide" >
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <supports-screens
         android:resizeable="true"
         android:smallScreens="true"
@@ -14,12 +16,13 @@
     </supports-screens>
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/iitguidefinal"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -28,30 +31,41 @@
         </activity>
         <activity
             android:name=".CourseActivity"
-            android:label="Student Portal" >
+            android:label="Student Portal"
+            android:screenOrientation="portrait">
         </activity>
 
         <activity
             android:name=".ChemGridActivity"
-            android:label="Chemistry Videos">
+            android:label="Chemistry Videos"
+            android:screenOrientation="portrait">
 
         </activity>
 
         <activity
             android:name=".QuestionAnswer"
-            android:label="Frequently Asked Questions">
+            android:label="Frequently Asked Questions"
+            android:screenOrientation="portrait">
 
         </activity>
 
         <activity
             android:name=".FacDirect"
-            android:label="Faculty Directory">
+            android:label="Faculty Directory"
+            android:screenOrientation="portrait">
 
         </activity>
 
         <activity
             android:name=".VimeoActivity"
             android:label="Video">
+
+        </activity>
+
+        <activity
+            android:name=".Contact"
+            android:label="Contact"
+            android:screenOrientation="portrait">
 
         </activity>
 

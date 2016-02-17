@@ -27,6 +27,7 @@ public class VimeoHelper {
 
     public static final String INVALID_LOGIN = "Invalid Username or Password";
     public static final String BLANK_LOGIN_ENTRY = "One Or More Fields Blank";
+    public static final String CONNECTION_MISSING = "Internet Connection Unavailable";
     public static ArrayList<Courses> completeCoursesArray = new ArrayList<Courses>();
     public static ArrayList<String> justCourseName = new ArrayList<String>();
 
@@ -97,7 +98,7 @@ public class VimeoHelper {
             String tempValue = (String) courseStat.get(tempKey);
             //tempValue now stores the complete blob of chaptername and videoIds
 
-
+            Log.d("RESPONSE", tempValue);
 
 
             if (tempKey.contains("Paid") || tempKey.contains("paid")) {
@@ -127,8 +128,11 @@ public class VimeoHelper {
 
                 for (String key : keyValMap.keySet()) {
 
+
                     String videoId = keyValMap.get(key);
                     String chapterName = key;
+
+
                     String imageUrl = "http://iitguide.com/StudentLogin/images/" + courseId + "/" + chapterName + ".png";
                     String flattenedImageName = courseId + "_" + chapterName;
 
@@ -139,21 +143,29 @@ public class VimeoHelper {
                     //adding videoobject to Array List which ultimately will be ArrayListFor Courses
 
 
-                    if(tempVid.chapterName.contains("chemistry")){
+                    if (tempVid.chapterName.contains("chemistry")) {
                         chemVideos.add(tempVid);
-                    }
-
-                    else if(tempVid.chapterName.contains("math")){
+                    } else if (tempVid.chapterName.contains("math")) {
                         mathVideos.add(tempVid);
-                    }
-
-                    else if(tempVid.chapterName.contains("physics")){
+                    } else if (tempVid.chapterName.contains("physics")) {
                         physicsVideos.add(tempVid);
                     }
 
+                }
 
+                for(Videos video : chemVideos){
+                    Log.d("Chapter Name", "Chapter Name");
+                    System.out.println(video.chapterName);
+                }
 
+                for(Videos video : physicsVideos){
+                    Log.d("Chapter Name", "Chapter Name");
+                    System.out.println(video.chapterName);
+                }
 
+                for(Videos video : mathVideos){
+                    Log.d("Chapter Name", "Chapter Name");
+                    System.out.println(video.chapterName);
                 }
 
                 Courses tempCourses = new Courses(courseId, courseName, courseStatus, chemVideos, mathVideos, physicsVideos);
@@ -165,7 +177,7 @@ public class VimeoHelper {
         //    System.out.println("MATH VIDZ" + VimeoHelper.completeCoursesArray.get(0).mathVideos.size());
         //    System.out.println("CHEM VIDZ" + VimeoHelper.completeCoursesArray.get(0).chemVideos.size());
 
-            Log.d("Shalabh", "Hurrah");
+                Log.d("Shalabh", "Hurrah");
 
         }
 
